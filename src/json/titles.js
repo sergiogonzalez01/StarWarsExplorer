@@ -1,0 +1,41 @@
+export const titles = {
+  people: [
+    "birth year",
+    "eye color",
+    "gender",
+    "height",
+    "mass",
+    "skin color",
+    "hair color",
+  ],
+  starships : [
+    "cargo capacity",
+    "model",
+    "cost in credits",
+    "crew",
+    "hyperdrive rating",
+    "length",
+    "max atmosphering speed",
+    "passengers",
+  ],
+  vehicles: [
+    "cargo capacity",
+    "model",
+    "cost in credits",
+    "crew",
+    "length",
+    "max atmosphering speed",
+    "passengers",
+    "vehicle class"
+  ],
+  planets: [
+    "climate",
+    "diameter",
+    "gravity",
+    "terrain",
+    "population",
+    "surface water",
+    "orbital period",
+    "rotation period",
+  ],
+};
