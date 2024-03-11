@@ -9,8 +9,8 @@ import { Index } from "./pages/Index";
 function App() {
   return (
     <main
-      className="h-dvh min-h-[550px] overflow-y-auto"
-      style={{ scrollbarWidth: "thin", scrollbarGutter: "stable" }}
+      className="h-dvh overflow-y-auto"
+      style={{ scrollbarGutter: "stable" }}
     >
       <GlobalContextProvider>
         <Routes>

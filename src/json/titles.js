@@ -1,5 +1,5 @@
 export const titles = {
-  people: [
+  characters: [
     "birth year",
     "eye color",
     "gender",
