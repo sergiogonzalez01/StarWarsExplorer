@@ -13,6 +13,6 @@ export function getCharacters({ search = null, page = null, category = 'people',
 }
 
 export function getImageCharacter({ path = '' }) {
-  return getDownloadURL(ref(storage, `characters/${path}`));
+  return getDownloadURL(ref(storage, `/${path}`));
 }
 

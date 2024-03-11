@@ -7,11 +7,12 @@ export function useCharacters() {
   const { characters, setCharacters, loading, setLoading } = useContext(Context);
   const [error, setError] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
-  const previousValues = useRef({ search: '', category: 'people' })
+  const previousValues = useRef({ search: '', category: 'characters' })
   const prev = useRef(null);
   const navigate = useNavigate();
 
-  const updateCharacters = async ({ url = null, search = null, page = 1, category = 'people' } = {}) => {
+  const updateCharacters = async ({ url = null, search = null, page = 1, category = 'characters' } = {}) => {
+    category = category === 'characters' ? 'people' : category;
 
     if (prev.current && prev.current.signal) prev.current.abort("Another fetch");
     prev.current = new AbortController();

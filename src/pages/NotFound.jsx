@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export function NotFound() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "StarWars Explorer | 404";
+  }, []);
 
   return (
     <div className="w-full h-full flex flex-col gap-4 m-auto items-center justify-center px-6">
@@ -20,7 +25,7 @@ export function NotFound() {
       </div>
       <button
         onClick={() => navigate("/search/people", { replace: true })}
-        className="w-fit text-amber-400 font-bold text-xl sm:text-2xl md:text-3xl py-2 px-4"
+        className="w-fit text-amber-400 font-bold text-xl sm:text-2xl md:text-3xl py-3 px-6 bg-black/75 border-2 border-slate-600 rounded-full"
       >
         <i className="fa-solid fa-arrow-left mr-2 animate-[arrowRight_1s_ease-in_infinite]"></i>
         BACK

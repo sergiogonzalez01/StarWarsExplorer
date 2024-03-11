@@ -2,7 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 
 export function Index() {
   return (
-    <div className="grid gap-10 sm:gap-14 relative top-[30vh]">
+    <div className="grid gap-6 md:gap-8 relative top-[30vh]">
       <Link to="/home" className="flex justify-self-center w-fit h-fit">
         <img
           src="/logo.svg"

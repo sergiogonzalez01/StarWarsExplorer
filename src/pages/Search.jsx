@@ -36,9 +36,13 @@ export function Search() {
     setSearch(searchParam);
   }, [searchParam]);
 
+  useEffect(() => {
+    document.title = "StarWars Explorer | Search";
+  }, []);
+
   return (
     <>
-      <section className="w-full px-6 grid gap-10 auto-rows-max justify-items-center">
+      <section className="w-full px-6 grid gap-6 md:gap-8 auto-rows-max justify-items-center">
         <form
           className="flex flex-col gap-2 w-full max-w-80 min-[512px]:max-w-xl md:max-w-2xl md:2/3 min-[512px]:flex-row"
           onSubmit={onUpdateData}
@@ -58,7 +62,7 @@ export function Search() {
               onChange={onUpdateData}
               value={category}
             >
-              <option value="people">People</option>
+              <option value="characters">Character</option>
               <option value="starships">Ship</option>
               <option value="vehicles">Vehicle</option>
               <option value="planets">Planet</option>

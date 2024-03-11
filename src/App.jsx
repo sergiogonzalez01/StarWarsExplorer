@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<Navigate to={"/home"} replace />} />
           <Route
             path="/search"
-            element={<Navigate to={"/search/people"} replace />}
+            element={<Navigate to={"/search/characters"} replace />}
           />
 
           <Route element={<Index />}>
