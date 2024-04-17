@@ -9,8 +9,8 @@ export function Home() {
   return (
     <div className="flex flex-col items-center gap-6 sm:gap-8 px-2 mb-[15dvh]">
       <h2 className="text-slate-100 text-lg sm:text-xl md:text-2xl  font-mono font-semibold italic text-center bg-black/75 p-2 rounded-md w-[90%] max-w-[750px] border-2 border-slate-600">
-        ¡Here you can find all characters, vehicles, starships or planets from
-        StarWars movies!
+        ¡Here you can search and see in detail the most iconic characters,
+        vehicles, starships or planets in the StarWars movies!
       </h2>
 
       <Link

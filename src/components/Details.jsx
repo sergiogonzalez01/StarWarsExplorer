@@ -1,5 +1,5 @@
-import { titles } from "../json/titles";
 import { ImageCharacter } from "./ImageCharacter";
+import Titles from "../assets/Titles.json";
 
 export function Details({ selected, updateSelected, category }) {
   const heightClass = "h-[90%] max-h-[700px] md:max-h-[650px] ";
@@ -7,14 +7,15 @@ export function Details({ selected, updateSelected, category }) {
 
   const clickBackground = (e) => e.target.id === "back" && updateSelected();
 
+  console.log(selected);
   return (
     <div
       id="back"
-      className="bg-black/60 fixed top-0 flex justify-center items-center h-dvh w-dvw backdrop-blur-[2px]"
       onClick={clickBackground}
+      className="bg-black/40 fixed top-0 flex justify-center items-center h-dvh w-dvw backdrop-blur-[2px]"
     >
       <div
-        className={`flex flex-col md:flex-row rounded-md relative bg-black overflow-hidden border-2 border-slate-700 ${heightClass} ${widthClass}`}
+        className={`flex flex-col md:flex-row rounded-md relative bg-black overflow-hidden animate-[modalScale_0.2s_forwards] ${heightClass} ${widthClass}`}
       >
         <ImageCharacter
           src={selected.srcImage}
@@ -42,22 +43,19 @@ export function Details({ selected, updateSelected, category }) {
             style={{ scrollbarWidth: "thin" }}
           >
             <ul className="flex flex-col gap-2 w-full h-full px-4 items-center  md:items-start">
-              {titles[category].map((title) => {
-                const propName = title.split(" ").join("_");
-                return (
-                  <li
-                    className="text-slate-700 w-fit h-fit font-bold capitalize text-center md:text-start"
-                    key={title}
-                  >
-                    <p className="text-lg md:text-xl">{title}: </p>
-                    <span
-                      className={`block text-slate-500 font-medium text-base md:text-lg rounded-md min-w-[100px]`}
-                    >
-                      {`> ${selected[propName]}`}
-                    </span>
-                  </li>
-                );
-              })}
+              {Titles[category].map((title) => (
+                <li
+                  key={title.title}
+                  className="text-slate-700 w-fit h-fit font-bold text-center md:text-start"
+                >
+                  <p className="text-lg md:text-xl">{title.title}: </p>
+
+                  <span className="capitalize block text-slate-500 font-medium text-base md:text-lg rounded-md min-w-[100px]">
+                    {`${selected[title.propName]}`}{" "}
+                    <span className="normal-case">{title.additionalText}</span>
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

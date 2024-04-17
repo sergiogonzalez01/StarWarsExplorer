@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../context/GlobalContext";
 
 export function useSelectedCharacter() {
@@ -12,5 +12,10 @@ export function useSelectedCharacter() {
       setSelected(null);
     }
   }
+
+  useEffect(() => {
+    setSelected(null);
+  }, [history.state])
+
   return { selected, updateSelected }
 }

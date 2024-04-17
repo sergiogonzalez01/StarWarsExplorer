@@ -6,8 +6,9 @@ export function Index() {
       <Link to="/home" className="flex justify-self-center w-fit h-fit">
         <img
           src="/logo.svg"
-          className="h-fit w-[15rem] sm:w-[18rem] md:w-[20rem] lg:w-[22rem]"
-          alt="starwars-logo"
+          alt="StarWars Explorer logo"
+          title="StarWars Explorer logo"
+          className="h-28 sm:h-32 md:h-36 lg:h-40"
         />
       </Link>
 

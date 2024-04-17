@@ -1,0 +1,165 @@
+{
+  "characters": [
+    {
+      "title": "Birth Year",
+      "propName": "birth_year",
+      "additionalText": ""
+    },
+    {
+      "title": "Eye Color",
+      "propName": "eye_color",
+      "additionalText": ""
+    },
+    {
+      "title": "Gender",
+      "propName": "gender",
+      "additionalText": ""
+    },
+    {
+      "title": "Height",
+      "propName": "height",
+      "additionalText": "cm"
+    },
+    {
+      "title": "Mass",
+      "propName": "mass",
+      "additionalText": "kg"
+    },
+    {
+      "title": "Skin Color",
+      "propName": "skin_color",
+      "additionalText": ""
+    },
+    {
+      "title": "Hair Color",
+      "propName": "hair_color",
+      "additionalText": ""
+    }
+  ],
+  "starships": [
+    {
+      "title": "Passengers",
+      "propName": "passengers",
+      "additionalText": ""
+    },
+    {
+      "title": "Cargo Capacity",
+      "propName": "cargo_capacity",
+      "additionalText": ""
+    },
+    {
+      "title": "Model",
+      "propName": "model",
+      "additionalText": ""
+    },
+    {
+      "title": "Cost in Credits",
+      "propName": "cost_in_credits",
+      "additionalText": ""
+    },
+    {
+      "title": "Crew",
+      "propName": "crew",
+      "additionalText": ""
+    },
+    {
+      "title": "Hyperdrive Rating",
+      "propName": "hyperdrive_rating",
+      "additionalText": "HCR"
+    },
+    {
+      "title": "Length",
+      "propName": "length",
+      "additionalText": "m"
+    },
+    {
+      "title": "Max Atmosphering Speed",
+      "propName": "max_atmosphering_speed",
+      "additionalText": "km/h"
+    }
+  ],
+  "vehicles": [
+    {
+      "title": "Passengers",
+      "propName": "passengers",
+      "additionalText": ""
+    },
+    {
+      "title": "Cargo Capacity",
+      "propName": "cargo_capacity",
+      "additionalText": ""
+    },
+    {
+      "title": "Model",
+      "propName": "model",
+      "additionalText": ""
+    },
+    {
+      "title": "Vehicle Class",
+      "propName": "vehicle_class",
+      "additionalText": ""
+    },
+    {
+      "title": "Cost in Credits",
+      "propName": "cost_in_credits",
+      "additionalText": ""
+    },
+    {
+      "title": "Crew",
+      "propName": "crew",
+      "additionalText": ""
+    },
+    {
+      "title": "Length",
+      "propName": "length",
+      "additionalText": "m"
+    },
+    {
+      "title": "Max Atmosphering Speed",
+      "propName": "max_atmosphering_speed",
+      "additionalText": "km/h"
+    }
+  ],
+  "planets": [
+    {
+      "title": "Climate",
+      "propName": "climate",
+      "additionalText": ""
+    },
+    {
+      "title": "Diameter",
+      "propName": "diameter",
+      "additionalText": "km"
+    },
+    {
+      "title": "Gravity",
+      "propName": "gravity",
+      "additionalText": ""
+    },
+    {
+      "title": "Terrain",
+      "propName": "terrain",
+      "additionalText": ""
+    },
+    {
+      "title": "Population",
+      "propName": "population",
+      "additionalText": ""
+    },
+    {
+      "title": "Surface Water",
+      "propName": "surface_water",
+      "additionalText": "%"
+    },
+    {
+      "title": "Orbital Period",
+      "propName": "orbital_period",
+      "additionalText": "days"
+    },
+    {
+      "title": "Rotation Period",
+      "propName": "rotation_period",
+      "additionalText": "hours"
+    }
+  ]
+}

@@ -1,64 +1,42 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useRef } from "react";
 import { Context } from "../context/GlobalContext";
 import { getCharacters } from "../services/Character";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-export function useCharacters() {
+export function useCharacters({ prevSearch, prevCategory } = {}) {
   const { characters, setCharacters, loading, setLoading } = useContext(Context);
-  const [error, setError] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const previousValues = useRef({ search: '', category: 'characters' })
-  const prev = useRef(null);
+  const prevSignal = useRef(null);
   const navigate = useNavigate();
 
   const updateCharacters = async ({ url = null, search = null, page = 1, category = 'characters' } = {}) => {
     category = category === 'characters' ? 'people' : category;
 
-    if (prev.current && prev.current.signal) prev.current.abort("Another fetch");
-    prev.current = new AbortController();
-    const abort = prev.current;
+    if (prevSignal.current && prevSignal.current.signal) prevSignal.current.abort("Another fetch");
+    prevSignal.current = new AbortController();
+    const abort = prevSignal.current;
 
     try {
-      previousValues.current = { search, category };
-      setError(false)
       setLoading(true)
-      const data = await getCharacters({ url, search, page, category, signal: prev.current.signal });
-      if (!data.results?.length) throw Error("Error, not results");
+      const data = await getCharacters({ url, search, page, category, signal: prevSignal.current.signal });
       setCharacters(data);
     }
     catch (err) {
-      console.error(err.message);
-      if (!abort.signal.aborted) {
-        setError(true);
-        setCharacters({});
-      }
+      if (!abort.signal.aborted) setCharacters({})
     } finally {
       if (!abort.signal.aborted) setLoading(false);
     }
   }
 
-  const nextPage = () => {
-    if (characters.next && !loading) {
-      const page = parseInt(searchParams.get('page'));
-      searchParams.set('page', page ? page + 1 : 2);
-      setSearchParams(searchParams)
-    }
-  };
-
-  const previousPage = () => {
-    if (characters.previous && !loading) {
-      const page = parseInt(searchParams.get('page'));
-      searchParams.set('page', page - 1);
-      setSearchParams(searchParams)
-    }
-  };
-
   const searchCharacters = ({ search, category }) => {
-    if (previousValues.current.search === search && previousValues.current.category === category) return;
+    if (prevSearch === search && prevCategory === category) return;
     const count = search.trim().length;
     if (count && search) navigate(`/search/${category}?q=${search}`)
     else navigate(`/search/${category}`)
   }
 
-  return { characters, loading, error, nextPage, previousPage, searchCharacters, updateCharacters }
+  const clearCharacters = () => {
+    setCharacters(null)
+  }
+
+  return { characters, loading, searchCharacters, updateCharacters, clearCharacters }
 }

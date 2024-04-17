@@ -5,14 +5,16 @@ import { ImageCharacter } from "./ImageCharacter";
 export function Card({ name, id }) {
   const { srcImage } = useCharacterImage({ id });
   const { updateSelected } = useSelectedCharacter();
+
   return (
-    <div
-      className="rounded-lg bg-black/75 w-56 h-fit cursor-pointer border-2 border-amber-600 p-1"
+    <article
       onClick={() => updateSelected({ name, srcImage })}
+      className="rounded-lg bg-black/75 w-56 h-fit cursor-pointer border-2 border-amber-600 p-1   hover:shadow-[0px_0px_15px] active:shadow-amber-600 hover:shadow-amber-600 active:scale-105 md:hover:scale-105 transition-all"
     >
       <ImageCharacter
         src={srcImage}
         alt={name}
+        title={name}
         imgClass="h-52 w-full object-contain bg-black"
       />
 
@@ -21,6 +23,6 @@ export function Card({ name, id }) {
           {name}
         </h5>
       </div>
-    </div>
+    </article>
   );
 }

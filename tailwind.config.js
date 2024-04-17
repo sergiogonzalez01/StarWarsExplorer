@@ -9,11 +9,15 @@ export default {
       keyframes: {
         arrowLeft: {
           '0%, 100%': { transform: 'translateX(0px)' },
-          '50%': { transform: 'translateX(10px)' },          
+          '50%': { transform: 'translateX(10px)' },
         },
         arrowRight: {
           '0%, 100%': { transform: 'translateX(0px)' },
-          '50%': { transform: 'translateX(-10px)' },          
+          '50%': { transform: 'translateX(-10px)' },
+        },
+        modalScale: {
+          '0%': { transform: 'scale(0)' },
+          '100%': { transform: 'scale(1)' }
         }
       }
     },

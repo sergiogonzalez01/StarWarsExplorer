@@ -9,8 +9,9 @@ export function ImageCharacter({ src, alt, imgClass }) {
       <img
         src={src}
         alt={alt}
-        className={`${imgClass} ${!loaded ? "hidden" : ''}`}
+        className={`${imgClass} ${!loaded ? "hidden" : ""}`}
         onLoad={() => setLoaded(true)}
+        draggable="false"
       />
 
       {!loaded ? <Loader className={imgClass} /> : null}

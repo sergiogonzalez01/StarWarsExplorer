@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export const Context = React.createContext();
 
 export function GlobalContextProvider({ children }) {
-  const [characters, setCharacters] = useState({});
+  const [characters, setCharacters] = useState(null);
   const [selected, setSelected] = useState(null);
   const [loading, setLoading] = useState(false);
 

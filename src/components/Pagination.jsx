@@ -1,33 +1,34 @@
 import { usePage } from "../hooks/usePage";
 import { PaginationButton } from "./PaginationButton";
 
-const activeStyle =
-  "bg-black/70 border-amber-400 hover:border-amber-300 text-amber-400 hover:text-amber-300 bg-[#000000aa] group";
-const disabledStyle =
-  "bg-black/70 pointer-events-none text-slate-300 border-transparent";
+export function Pagination({ characters, loading }) {
+  const { page, nextPage, previousPage } = usePage();
 
-export function Pagination({ nextPage, previousPage, characters, loading }) {
-  const { page } = usePage();
+  const hasPrev = characters?.previous && !loading;
+  const hasNext = characters?.next && !loading;
+
+  const classActive =
+    "border-amber-500 text-amber-500 active:shadow-[0px_0px_10px] md:hover:shadow-[0px_0px_10px] shadow-amber-500";
+  const classDesactive =
+    "pointer-events-none text-slate-300 border-transparent";
 
   return (
     <div className="flex flex-row justify-center gap-4 w-fit select-none">
       <PaginationButton
-        styles={characters?.previous && !loading ? activeStyle : disabledStyle}
-        onClick={() => previousPage()}
-      >
-        <i className="fa-solid fa-angle-left group-hover:scale-125 transition-all"></i>
-      </PaginationButton>
+        icon="fa-solid fa-angle-left"
+        onClick={previousPage}
+        className={hasPrev ? classActive : classDesactive}
+      />
 
-      <PaginationButton styles="bg-blue-600 text-white min-w-fit pointer-events-none border-transparent">
+      <PaginationButton className="bg-blue-600 text-white min-w-fit pointer-events-none border-transparent">
         {page}
       </PaginationButton>
 
       <PaginationButton
-        styles={characters?.next && !loading ? activeStyle : disabledStyle}
-        onClick={() => nextPage()}
-      >
-        <i className="fa-solid fa-angle-right group-hover:scale-125 transition-all"></i>
-      </PaginationButton>
+        icon="fa-solid fa-angle-right"
+        onClick={nextPage}
+        className={hasNext ? classActive : classDesactive}
+      />
     </div>
   );
 }
