@@ -4,7 +4,7 @@
 
 Navega y encuentra fácilmente todo lo que busques gracias a un diseño amigable e intuitivo.<br>
 Ya sea que estés buscando a un Jedi legendario, un droide astuto, o un planeta exótico, lo tenemos cubierto.<br>
-La información utilizada es obtenida a traves del consumo de la API llamada [SWAPI](https//swapi.dev/)
+La información utilizada es obtenida a traves del consumo de la API llamada [SWAPI](https://swapi.dev/)
 
 **¡Prepárate para embarcarte en una emocionante aventura!**
 <br><br>
@@ -20,6 +20,6 @@ Para asegurarnos de obtener resultados más precisos, te permitimos filtrar tu b
 <hr>
 
 ### Resultados detallados
-¿Quieres conocer más sobre tus personajes favoritos? ¿O explorar las características únicas de las naves y vehículos emblemáticos de la saga? ¡Podemos hacerlo!
+¿Quieres conocer más sobre tus personajes favoritos? ¿O explorar las características únicas de las naves y vehículos emblemáticos de la saga? **¡Podemos hacerlo!**
 <br><br>
 ![image](https://github.com/sergiogonzalez01/StarWarsExplorer/assets/60524882/aa35ceb4-badf-4dcc-946d-51c7e3becff9)
