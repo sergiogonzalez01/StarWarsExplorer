@@ -1,13 +1,15 @@
 import { ImageCharacter } from "./ImageCharacter";
 import Titles from "../assets/Titles.json";
+import { useParams } from "react-router-dom";
 
-export function Details({ selected, updateSelected, category }) {
+export function Details({ selected, updateSelected }) {
+  const { category } = useParams();
+
   const heightClass = "h-[90%] max-h-[700px] md:max-h-[650px] ";
   const widthClass = "w-[90%] max-w-[400px] md:max-w-[1000px] ";
 
   const clickBackground = (e) => e.target.id === "back" && updateSelected();
 
-  console.log(selected);
   return (
     <div
       id="back"
@@ -31,10 +33,10 @@ export function Details({ selected, updateSelected, category }) {
 
             <button
               type="button"
-              className="flex items-center justify-center absolute md:static top-3 right-3"
               onClick={() => updateSelected()}
+              className="flex items-center justify-center absolute md:static top-3 right-3 p-1 md:hover:bg-slate-200 rounded-full"
             >
-              <i className="fa-solid fa-xmark flex h-9 justify-center items-center text-5xl md:text-4xl text-red-500"></i>
+              <i className="fa-solid fa-xmark flex h-8 justify-center items-center text-5xl md:text-4xl text-red-500 aspect-square"></i>
             </button>
           </div>
 

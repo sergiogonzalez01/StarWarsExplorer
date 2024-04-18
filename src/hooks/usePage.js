@@ -7,6 +7,8 @@ export function usePage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const { characters, loading } = useCharacters();
   const [page, setPage] = useState(1);
+  const hasNext = Boolean(characters?.next);
+  const hasPrev = Boolean(characters?.previous);
 
   const nextPage = () => {
     if (characters.next && !loading) {
@@ -29,5 +31,5 @@ export function usePage() {
     setPage(currentPage || 1);
   }, [searchParams])
 
-  return { page, nextPage, previousPage }
+  return { page, hasNext, hasPrev, nextPage, previousPage }
 }

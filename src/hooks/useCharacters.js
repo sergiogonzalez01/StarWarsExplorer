@@ -1,12 +1,18 @@
 import { useContext, useRef } from "react";
-import { Context } from "../context/GlobalContext";
-import { getCharacters } from "../services/Character";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 
-export function useCharacters({ prevSearch, prevCategory } = {}) {
+import { getCharacters } from "../services/Character";
+
+import { Context } from "../context/GlobalContext";
+
+export function useCharacters() {
   const { characters, setCharacters, loading, setLoading } = useContext(Context);
   const prevSignal = useRef(null);
   const navigate = useNavigate();
+
+  const { category: prevCategory } = useParams();
+  const [params] = useSearchParams();
+  const prevSearch = params.get('q') || "";
 
   const updateCharacters = async ({ url = null, search = null, page = 1, category = 'characters' } = {}) => {
     category = category === 'characters' ? 'people' : category;
@@ -21,7 +27,7 @@ export function useCharacters({ prevSearch, prevCategory } = {}) {
       setCharacters(data);
     }
     catch (err) {
-      if (!abort.signal.aborted) setCharacters({})
+      if (!abort.signal.aborted) setCharacters({ results: [] })
     } finally {
       if (!abort.signal.aborted) setLoading(false);
     }

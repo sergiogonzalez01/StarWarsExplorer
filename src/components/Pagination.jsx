@@ -1,11 +1,8 @@
 import { usePage } from "../hooks/usePage";
 import { PaginationButton } from "./PaginationButton";
 
-export function Pagination({ characters, loading }) {
-  const { page, nextPage, previousPage } = usePage();
-
-  const hasPrev = characters?.previous && !loading;
-  const hasNext = characters?.next && !loading;
+export function Pagination() {
+  const { page, hasPrev, hasNext, nextPage, previousPage } = usePage();
 
   const classActive =
     "border-amber-500 text-amber-500 active:shadow-[0px_0px_10px] md:hover:shadow-[0px_0px_10px] shadow-amber-500";
