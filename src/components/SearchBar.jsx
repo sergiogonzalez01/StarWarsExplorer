@@ -52,7 +52,7 @@ export default function SearchBar() {
           className="bg-gray-50 text-slate-900 rounded-lg  p-2.5 cursor-pointer font-medium focus:outline outline-blue-500 outline-2"
         >
           <option value="characters">Character</option>
-          <option value="starships">Ship</option>
+          <option value="starships">Starship</option>
           <option value="vehicles">Vehicle</option>
           <option value="planets">Planet</option>
         </select>
